@@ -1,7 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//FR">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <HTML><HEAD><TITLE>EMPREINTE CARBONE DES MAILS</TITLE>
-<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=Content-Type content="text/html; charset=utf8">
 <META content="MSHTML 6.00.2800.1106" name=GENERATOR>
 
 <SCRIPT language=javascript>
@@ -28,8 +28,7 @@ if (theonecr==0 )
 {
 document.carbonne.output.value=(testincr*12*4 + testinagecr*10);
 document.carbonne.output2.value=Math.round((testincr*12*4 + testinagecr*10) / 150);
-document.carbonne.piece_jointe.value="Souvent: Envoies moins de mails avec des pièces jointes, puisqu'une pièce jointe émet 50 g de CO2";
-//document.carbonne.output31.value="Souvent : Continues à supprimer tes mails, supprimes en plus, tu verras ton empreinte carbone diminuer";
+document.getElementById("piece_jointe").innerHTML="Souvent: Envoies moins de mails avec des pièces jointes, puisqu'une pièce jointe émet 50 g de CO2";
 
 }
 else
@@ -38,46 +37,47 @@ if (theonecr==1 )
 {
 document.carbonne.output.value=(testincr*12*4 + testinagecr*10);
 document.carbonne.output2.value=Math.round((testincr*12*4 + testinagecr*10) / 150);
-document.carbonne.piece_jointe.value="Moyen: Envoies moins de mails avec des pièces jointes.";
-//document.carbonne.output31.value="Moyen : Continues à supprimes tes mails, pour diminuer l'effet de CO2";
+document.getElementById("piece_jointe").innerHTML="Moyen: Envoies moins de mails avec des pièces jointes.";
+
 }
 else
 {
 document.carbonne.output.value=(testincr*12*4 + testinagecr*10);
 document.carbonne.output2.value=Math.round((testincr*12*4 + testinagecr*10) / 150);
-document.carbonne.piece_jointe.value="Rare : C'est bien continues ainsi";
-
-//document.carbonne.output31.value="Rare : Penses à notre planète, supprimes tes mails, tu peux aider à la sauver :-)";
+document.getElementById("piece_jointe").innerHTML="Rare : C'est bien continues ainsi.";
 }
 }
 //Message : conseil
 if (document.carbonne.output2.value >450 ){
 if (document.carbonne.output2.value >700 ){
-document.carbonne.conseil.value = "BEAUCOUP ESSAYES DE SUPPRIMER DES MAILS !!!";
+document.getElementById("conseil").innerHTML="BEAUCOUP ESSAYES DE SUPPRIMER DES MAILS !!!";
+
 }
 else{
-document.carbonne.conseil.value =  "Tu peux mieux faire";
+document.getElementById("conseil").innerHTML="Tu peux mieux faire";
 }
 }
 else{
-document.carbonne.conseil.value = "C'est bien, continues à supprimer tes mails";
+document.getElementById("conseil").innerHTML="C'est bien, continues à supprimer tes mails";
 }
 
 // supression mail
 
 if (sup_mail==0 )
 {
-document.carbonne.output31.value="Souvent : Continues à supprimer tes mails, supprimes en plus, tu verras ton empreinte carbone diminuer";
+
+document.getElementById("sup_mail_id").innerHTML="Souvent : Continues à supprimer tes mails, supprimes en plus, tu verras ton empreinte carbone diminuer";
+//document.carbonne.output31.value="Souvent : Continues à supprimer tes mails, supprimes en plus, tu verras ton empreinte carbone diminuer";
 }
 else
 {
 if (sup_mail==1 )
 {
-document.carbonne.output31.value="Moyen : Continues à supprimes tes mails, pour diminuer l'effet de CO2";
+document.getElementById("sup_mail_id").innerHTML="Moyen : Continues à supprimes tes mails, pour diminuer l'effet de CO2";
 }
 else
 {
-document.carbonne.output31.value="Rare : Penses à notre planète, supprimes tes mails, tu peux aider à la sauver :-)";
+document.getElementById("sup_mail_id").innerHTML="Rare : Penses à notre planète, supprimes tes mails, tu peux aider à la sauver :-)";
 }
 }
 // Piece jointe
@@ -100,16 +100,17 @@ document.carbonne.output31.value="Rare : Penses à notre planète, supprimes tes
 }
 .lienbleu {
 	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	
 }
 </STYLE>
 </HEAD>
-<BODY style="FONT-SIZE: 10pt; COLOR: rgb(0,0,0); FONT-FAMILY: Arial" 
-vLink=#ffffff aLink=#000000 link=#ffffff bgColor=#408080 leftMargin=5 
-topMargin=5>
-<!--
+<BODY  style=" background-image:url('earth.jpg');FONT-SIZE: 10pt; COLOR: rgb(0,0,0); FONT-FAMILY: Arial" 
+vLink=#ffffff aLink=#000000 link=#ffffff leftMargin=5 
+topMargin=5 >
+
 <P align=center><A href="http://iut-caen.unicaen.fr/"><SPAN 
-class=standard><IMG height=200 src="earth.jpg" width=250 
-border=0></SPAN></A></P>-->
+class=standard><IMG height=200 src="carbonne3.jpg" width=250 
+border=0></SPAN></A></P>
 <P align=center><STRONG><FONT color=#ffcb00><SPAN class=grandgras>CALCULEZ VOTRE EMPREINTE CARBONE DES MAILS</SPAN></FONT></STRONG></P>
 <P align=center><SPAN class=standard><IMG height=4 
 alt="cadreseparateurblanc.gif (78 octets)" 
@@ -176,7 +177,7 @@ border=0></SPAN></P>
 			
 			<DIV align=center>
             <CENTER>
-            <P><SPAN class=standard><STRONG><FONT color=#ffffff>Supprimes tu tes mails envoyés ou réçus   : <INPUT type=radio name=suppression> :  Souvent 
+            <P><SPAN class=standard><STRONG><FONT color=#ffffff>Supprimes tu tes mails envoyés ou reçus   : <INPUT type=radio name=suppression> :  Souvent 
             <INPUT type=radio name=suppression> : Moyen <INPUT type=radio  name=suppression> : Rare</FONT></STRONG></SPAN></P></CENTER></DIV>
 			
             <DIV align=center>
@@ -193,21 +194,73 @@ border=0></SPAN></P>
             <P><SPAN class=standard><STRONG><FONT color=#ffffff> Cela équivaut à : </FONT></STRONG><INPUT 
             size=15 name=output2> <STRONG><FONT color=#ffffff> km en voiture</FONT></STRONG></SPAN></P></CENTER></DIV>
 			
-            			<DIV align=center>
+			<P align=center><STRONG><SPAN class=standard><IMG height=4 
+			src="cadreseparateurblanc.gif" width=514 border=0 
+			?></SPAN></STRONG></P>
+<!--
+			<DIV align=center>
             <CENTER>
-            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Pièce jointe : </FONT></STRONG>   <INPUT size=35 name=piece_jointe> 
+            <TABLE cellPadding=4 width="80%" bgColor=#AEF30E border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <P align=center><SPAN class=standard><FONT color=#ffffff>
+				  
+                 <p id="piece_jointe"> </p>   
+  				 
+				  </FONT></SPAN></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+			<P align=center><STRONG><SPAN class=standard><IMG height=4 
+			src="cadreseparateurblanc.gif" width=514 border=0 
+			?></SPAN></STRONG></P>
+
+			<DIV align=center>
+            <CENTER>
+            <TABLE cellPadding=4 width="80%" bgColor=#AEF30E border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <P align=center><SPAN class=standard><FONT color=#33B7FF>
+				  
+                 
+				 <p id="sup_mail_id"> </p>
+								 
+				  </FONT></SPAN></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+
+			<P align=center><STRONG><SPAN class=standard><IMG height=4 
+			src="cadreseparateurblanc.gif" width=514 border=0 
+			?></SPAN></STRONG></P>
+
+			<DIV align=center>
+            <CENTER>
+            <TABLE cellPadding=4 width="80%" bgColor=#AEF30E border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <P align=center><SPAN class=standard><FONT color=#E7FF33 >
+		
+				 <p id="conseil"> </p>  				 
+				  </FONT></SPAN></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+-->
+
+
+
+
+            <DIV align=center>
+            <CENTER>
+            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Pièce jointe : </FONT></STRONG>   <p id="piece_jointe"> </p>
+            <STRONG><FONT 
+            color=#AEF30E></FONT></STRONG></SPAN></P></CENTER></DIV>
+			
+			
+			<DIV align=center>
+            <CENTER>
+            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Supression mail : </FONT></STRONG>   <p id="sup_mail_id"> </p>
             <STRONG><FONT 
             color=#AEF30E></FONT></STRONG></SPAN></P></CENTER></DIV>
 			
 			<DIV align=center>
             <CENTER>
-            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Supression mail : </FONT></STRONG>   <INPUT size=35 name=output31> 
-            <STRONG><FONT 
-            color=#AEF30E></FONT></STRONG></SPAN></P></CENTER></DIV>
-			
-			<DIV align=center>
-            <CENTER>
-            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Avis: </FONT></STRONG>   <INPUT size=35 name=conseil> 
+            <P><SPAN class=standard><STRONG><FONT color=#ffffff> Avis: </FONT></STRONG>   <p id="conseil"> </p>  
             <STRONG><FONT 
             color=#AEF30E></FONT></STRONG></SPAN></P></CENTER></DIV>
 			
@@ -263,15 +316,32 @@ border=0></SPAN></P>
 <DIV align=center>
 
 
+<CENTER>
+<TABLE borderColor=#000000 cellSpacing=0 cellPadding=5 width=514 bgColor=#ffffff 
+border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle width="100%"><STRONG><FONT color=#000000><SPAN 
+      class=standard>Protegeons notre planète .</SPAN></FONT></STRONG>
+      <P><A 
+      < href="http://iut-caen.unicaen.fr/presentation/4-sites-geographiques/site-de-caen-campus-ii/">
+	  <IMG  height=200 src="carbonne2.jpg" width=600 
+      border=1></A>
+	  
+	  
+	  </P></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P align=center>&nbsp;</P>
 
 
 <FORM>
 <DIV align=center>
 <CENTER>
 <P><STRONG><SPAN class=standard><INPUT onclick=self.close() type=button value=" Cliquez ici pour fermer cette fenêtre."></SPAN></STRONG></P></CENTER></DIV></FORM>
+
+
 <P align=center><STRONG><SPAN class=standard><IMG height=4 
 src="Le poids idéal_fichiers/cadreseparateurblanc.gif" width=514 border=0 
 ?></SPAN></STRONG></P>
-<P align=center><STRONG><SPAN class=standard><IMG height=53 
-src="carbonne1.jpg" width=260 border=0></SPAN></STRONG></P>
+<P align=center><STRONG><SPAN class=standard><IMG height=90
+src="iut.png" width=100 border=0></SPAN></STRONG></P>
 <P align=center><SPAN class=standardsmall><STRONG><FONT color=#ffffff>Droit IUT Grand Ouest Normandie - Caen 2022</FONT></STRONG></SPAN></P></B></BODY></HTML>
